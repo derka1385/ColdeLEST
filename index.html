@@ -190,257 +190,6 @@
                 /* Ou utilisez votre couleur de fond habituelle */
             }
 
-            .stat-card {
-                padding: 1rem;
-                transition: transform 0.3s ease;
-            }
-
-            .stat-card:hover {
-                transform: translateY(-5px);
-            }
-
-            .stat-icon {
-                margin: 0 auto;
-            }
-
-            /* OPTIMISATIONS SPÉCIFIQUES POUR IPHONE */
-
-            /* iPhone standard et SE (jusqu'à 480px) */
-            @media (max-width: 480px) {
-                .stats-section {
-                    height: auto !important;
-                    min-height: 100vh;
-                    padding: 3rem 0;
-                    background-color: #000000; /* Fond noir comme l'original */
-                /* Ou utilisez votre couleur de fond habituelle */
-                }
-                
-                /* Titre principal */
-                .stats-title {
-                    font-size: 2.5rem !important; /* Plus petit que text-6xl */
-                    line-height: 1.1;
-                    margin-bottom: 1.5rem !important;
-                    padding: 0 1rem;
-                }
-                
-                /* Description */
-                .stats-description {
-                    font-size: 1rem !important; /* Plus petit que text-xl */
-                    padding: 0 1rem;
-                    margin-bottom: 2rem !important;
-                    line-height: 1.5;
-                }
-                
-                /* Grille des stats - 2 colonnes seulement sur iPhone */
-                .stats-grid {
-                    grid-template-columns: repeat(2, 1fr) !important;
-                    gap: 1.5rem !important;
-                    margin-top: 2rem;
-                }
-                
-                /* Cartes individuelles */
-                .stat-card {
-                    padding: 1rem 0.5rem;
-                }
-                
-                /* Icônes */
-                .stat-icon {
-                    width: 3rem !important; /* Plus petit */
-                    height: 3rem !important;
-                    margin-bottom: 0.75rem !important;
-                }
-                
-                .stat-icon svg {
-                    width: 1.5rem !important;
-                    height: 1.5rem !important;
-                }
-                
-                /* Chiffres */
-                .stat-number {
-                    font-size: 1.875rem !important; /* Plus petit que text-3xl */
-                    margin-bottom: 0.5rem !important;
-                }
-                
-                /* Titres des stats */
-                .stat-title {
-                    font-size: 0.875rem !important; /* Plus petit que text-xl */
-                    margin-bottom: 0.25rem !important;
-                    line-height: 1.2;
-                }
-                
-                /* Sous-titres */
-                .stat-subtitle {
-                    font-size: 0.75rem !important;
-                    line-height: 1.3;
-                }
-            }
-
-            /* iPhone Plus/Pro Max (481px à 767px) */
-            @media (min-width: 481px) and (max-width: 767px) {
-                .stats-section {
-                    height: auto !important;
-                    min-height: 100vh;
-                    padding: 4rem 0;
-                }
-                
-                .stats-title {
-                    font-size: 3.5rem !important;
-                    line-height: 1.1;
-                }
-                
-                .stats-description {
-                    font-size: 1.125rem !important;
-                    margin-bottom: 3rem !important;
-                }
-                
-                /* Grille en 2x2 pour Plus/Pro Max */
-                .stats-grid {
-                    grid-template-columns: repeat(2, 1fr) !important;
-                    gap: 2rem !important;
-                    max-width: 500px;
-                    margin: 0 auto;
-                }
-                
-                .stat-card {
-                    padding: 1.5rem 1rem;
-                }
-                
-                .stat-icon {
-                    width: 3.5rem !important;
-                    height: 3.5rem !important;
-                }
-                
-                .stat-number {
-                    font-size: 2.25rem !important;
-                }
-                
-                .stat-title {
-                    font-size: 1rem !important;
-                }
-            }
-
-            /* Tablettes (768px à 1023px) */
-            @media (min-width: 768px) and (max-width: 1023px) {
-                .stats-section {
-                    padding: 4rem 0;
-                }
-                
-                .stats-grid {
-                    grid-template-columns: repeat(4, 1fr);
-                    gap: 1.5rem;
-                }
-                
-                .stats-title {
-                    font-size: 4rem !important;
-                }
-            }
-
-            /* Optimisations pour mode paysage sur iPhone */
-            @media (max-height: 500px) and (orientation: landscape) and (max-width: 767px) {
-                .stats-section {
-                    height: auto !important;
-                    min-height: auto;
-                    padding: 2rem 0;
-                }
-                
-                .stats-title {
-                    font-size: 2rem !important;
-                    margin-bottom: 1rem !important;
-                }
-                
-                .stats-description {
-                    font-size: 0.875rem !important;
-                    margin-bottom: 1.5rem !important;
-                }
-                
-                .stats-grid {
-                    grid-template-columns: repeat(4, 1fr) !important;
-                    gap: 1rem !important;
-                }
-                
-                .stat-card {
-                    padding: 0.5rem;
-                }
-                
-                .stat-icon {
-                    width: 2.5rem !important;
-                    height: 2.5rem !important;
-                    margin-bottom: 0.5rem !important;
-                }
-                
-                .stat-number {
-                    font-size: 1.5rem !important;
-                    margin-bottom: 0.25rem !important;
-                }
-                
-                .stat-title {
-                    font-size: 0.75rem !important;
-                    margin-bottom: 0.125rem !important;
-                }
-                
-                .stat-subtitle {
-                    font-size: 0.625rem !important;
-                }
-                
-                .registration{
-                        margin-bottom: 16rem;
-                }
-            }
-
-            /* Améliorations générales pour mobile */
-            @media (max-width: 767px) {
-                /* Amélioration de la lisibilité */
-                .stats-section .container {
-                    padding-left: 1rem;
-                    padding-right: 1rem;
-                }
-                
-                /* Touch targets plus grands */
-                .stat-card {
-                    min-height: 44px;
-                    cursor: pointer;
-                }
-                
-                /* Optimisation des performances pour iOS */
-                .stat-card,
-                .stat-icon {
-                    -webkit-transform: translateZ(0);
-                    transform: translateZ(0);
-                }
-                
-                /* Amélioration des animations sur mobile */
-                .stat-icon {
-                    transition: transform 0.2s ease; /* Plus rapide sur mobile */
-                }
-                
-                .stat-card:active .stat-icon {
-                    transform: scale(0.95); /* Feedback tactile */
-                }
-
-                .registration{
-                        margin-bottom: 160px;
-                    }
-            }
-
-            /* Gestion du notch pour iPhone X et plus récents */
-            @supports (padding: max(0px)) {
-                @media (max-width: 767px) {
-                    .stats-section {
-                        padding-top: max(3rem, env(safe-area-inset-top) + 2rem);
-                        padding-bottom: max(3rem, env(safe-area-inset-bottom) + 2rem);
-                    }
-
-                    .registration{
-                        margin-bottom: 160px;
-                    }
-                }
-            }
-
-            /* Correction de la typo */
-            .stats-description strong {
-                color: #14a338;
-            }
-   
 </style>
 </head>
 
@@ -460,8 +209,8 @@
                 </div>
                 
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#registration" class="text-white/90 hover:text-white transition-colors">Evènements</a>
-                    <a href="#about" class="text-white/90 hover:text-white transition-colors">Gallerie</a>
+                    <a href="index.html" class="text-white/90 hover:text-white transition-colors">Evènements</a>
+                    <a href="Gallerie.html" class="text-white/90 hover:text-white transition-colors">Gallerie</a>
                     <a href="#contact" class="text-white/90 hover:text-white transition-colors">Contact</a>
                 </nav>
                 
@@ -480,8 +229,8 @@
             
             <div id="mobile-menu" class="mobile-menu md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
                 <nav class="flex flex-col space-y-4">
-                    <a href="#experiences" class="text-white/90 hover:text-white transition-colors">Evènements</a>
-                    <a href="#about" class="text-white/90 hover:text-white transition-colors">Gallerie</a>
+                    <a href="index.html" class="text-white/90 hover:text-white transition-colors">Evènements</a>
+                    <a href="Gallerie.html" class="text-white/90 hover:text-white transition-colors">Gallerie</a>
                     <a href="#contact" class="text-white/90 hover:text-white transition-colors">Contact</a>
                     <div class="pt-4">
                         <button onclick="scrollToRegistration()" class="bg-emerald-700 hover:bg-red-700 text-white w-full py-2 rounded-md transition-colors">
@@ -533,11 +282,11 @@
         </div>
     </div>
    
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white scroll-indicator">
+    <!--<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white scroll-indicator">
         <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
             <div class="w-1 h-3 bg-white rounded-full mt-2"></div>
         </div>
-    </div>
+    </div>-->
 </section>
 
     <!-- index.html -->
@@ -564,9 +313,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                     </svg>
                 </div>
-                <div class="stat-number text-3xl font-bold mb-2">Nouveau</div>
-                <div class="stat-title text-xl font-semibold mb-1">Balade</div>
-                <div class="stat-subtitle text-gray-400 text-sm">Début de l'aventure</div>
+                <div class="stat-number text-3xl font-bold mb-2">1</div>
+                <div class="stat-title text-xl font-semibold mb-1">Balade réalisée</div>
+                <div class="stat-subtitle text-gray-400 text-sm">On est qu'au début de l'aventure</div>
             </div>
             <div class="stat-card text-center group">
                 <div class="stat-icon inline-flex items-center justify-center w-16 h-16 mb-4 bg-emerald-700 rounded-full group-hover:scale-110 transition-transform duration-300">
@@ -587,7 +336,7 @@
                 </div>
                 <div class="stat-number text-3xl font-bold mb-2">1</div>
                 <div class="stat-title text-xl font-semibold mb-1">Pays exploré</div>
-                <div class="stat-subtitle text-gray-400 text-sm">Et on compte pas s'arrêter là</div>
+                <div class="stat-subtitle text-gray-400 text-sm">Et on compte pas <br> s'arrêter là</div>
             </div>
             <div class="stat-card text-center group">
                 <div class="stat-icon inline-flex items-center justify-center w-16 h-16 mb-4 bg-emerald-700 rounded-full group-hover:scale-110 transition-transform duration-300">
@@ -780,7 +529,7 @@
                 <h3 class="text-white font-semibold mb-4">La Communauté</h3>
                 <ul class="space-y-2">
                 <li><a href="#" class="hover:text-white transition">Événements</a></li>
-                <li><a href="#" class="hover:text-white transition">Photos des éditions</a></li>
+                <li><a href="Gallerie.html" class="hover:text-white transition">Photos des éditions</a></li>
                 <li><a href="#" class="hover:text-white transition">Partenaires</a></li>
                 </ul>
             </div>
