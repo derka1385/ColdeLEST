@@ -161,18 +161,20 @@
             transform: translateY(-2px);
         }
 
-        /* Modal styles */
+        /* Modal styles - Version responsive améliorée */
         .modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.6);
             display: none;
             align-items: center;
             justify-content: center;
             z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .modal.active {
@@ -180,26 +182,163 @@
         }
 
         .modal-content {
-            max-width: 90vw;
-            max-height: 90vh;
             position: relative;
+            max-width: 95vw;
+            max-height: 95vh;
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-content img {
-            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
             height: auto;
+            object-fit: contain;
             border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .modal-close {
             position: absolute;
-            top: -40px;
+            top: -50px;
             right: 0;
-            background: none;
+            background: rgba(0, 0, 0, 0.7);
             border: none;
             color: white;
             font-size: 2rem;
             cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Nouveau bouton de téléchargement dans le modal */
+        .modal-download-btn {
+            position: absolute;
+            top: -50px;
+            right: 60px;
+            background: rgba(16, 185, 129, 0.9);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-download-btn:hover {
+            background: rgba(5, 150, 105, 0.9);
+            transform: translateY(-2px);
+        }
+
+        @media ( min-width: 480px ) {
+            .modal {
+                padding: 5px;
+            }
+            
+            .modal-content {
+                max-width: 60%;
+                max-height: 100vh;
+            }
+            
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                background: rgba(0, 0, 0, 0.8);
+                font-size: 1.2rem;
+                width: 30px;
+                height: 30px;
+            }
+
+            .modal-download-btn {
+                top: 10px;
+                right: 50px;
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+
+            .modal-content img {
+                max-width: 90vh;
+                max-height: 90vh;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                border-radius: 8px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            }
+
+        }
+
+        /* Styles spécifiques pour mobile */
+        @media (max-width: 768px) {
+            .modal {
+                padding: 10px;
+            }
+            
+            .modal-content {
+                max-width: 100vw;
+                max-height: 100vh;
+            }
+            
+            .modal-close {
+                top: -45px;
+                right: -5px;
+                font-size: 1.5rem;
+                width: 35px;
+                height: 35px;
+            }
+
+            .modal-download-btn {
+                top: -45px;
+                right: 40px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal {
+                padding: 5px;
+            }
+            
+            .modal-content {
+                max-width: 100vw;
+                max-height: 100vh;
+            }
+            
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                background: rgba(0, 0, 0, 0.8);
+                font-size: 1.2rem;
+                width: 30px;
+                height: 30px;
+            }
+
+            .modal-download-btn {
+                top: 10px;
+                right: 50px;
+                padding: 6px 10px;
+                font-size: 11px;
+            }
         }
 
         /* Email Modal Styles */
@@ -301,6 +440,52 @@
             height: 24px;
             fill: currentColor;
         }
+
+        /* Styles pour les boutons de navigation (flèches) */
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            user-select: none;
+        }
+
+        .modal-nav:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal-nav.prev {
+            left: 20px;
+        }
+
+        .modal-nav.next {
+            right: 20px;
+        }
+
+        /* Responsive pour mobile */
+        @media (max-width: 768px) {
+            .modal-nav {
+                font-size: 20px;
+                padding: 12px 16px;
+            }
+            
+            .modal-nav.prev {
+                left: 10px;
+            }
+            
+            .modal-nav.next {
+                right: 10px;
+            }
+        }
     </style>
 
     <!-- EmailJS -->
@@ -318,7 +503,7 @@
 
     <!-- Header -->
     <header class="absolute top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div class="container mx-auto px-4 py-4">
+        <div class="container mx-1 px-4 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2">
                     <img src="logo png blanc.png" alt="Logo" class="h-16 w-16">
@@ -386,13 +571,26 @@
         </div>
     </section>
 
+
     <!-- Modal for full-size view -->
     <div id="photoModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div class="modal-content m-auto my-90%">
+            <button class="modal-close mb-1" onclick="closeModal()" style="background: black; padding: 0.5rem; border: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+
+            <button class="modal-download-btn" onclick="requestPhotoFromModal()" id="modalDownloadBtn">
+                📧 Recevoir par email
+            </button>
+            <button id="modalPrev" class="modal-nav prev">←</button>
             <img id="modalImage" src="" alt="">
+            <button id="modalNext" class="modal-nav next">→</button>
         </div>
     </div>
+
 
     <!-- Email Request Modal -->
     <div id="emailModal" class="modal">
@@ -433,17 +631,18 @@
             { id: 7, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/12_gwncy1.jpg", title: "Rallye Col de L'EST - Photo 7" },
             { id: 8, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/10_ojio7j.jpg", title: "Rallye Col de L'EST - Photo 8" },
             { id: 9, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/13_uajstj.jpg", title: "Rallye Col de L'EST - Photo 9" },
-            { id: 10, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/11_o8u86t.jpg", title: "Rallye Col de L'EST - Photo 10" },
+            { id: 10, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/11_o8u86t.jpg", title: "Rallye Col de L'EST - Photo 10"},
             { id: 11, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/20_xt2dkm.jpg", title: "Rallye Col de L'EST - Photo 11"},
-            { id: 11, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/21_lyu1gv.jpg", title: "Rallye Col de L'EST - Photo 12"},
-            { id: 11, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/22_ylockz.jpg", title: "Rallye Col de L'EST - Photo 13"},
-            { id: 11, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/23_b0nmye.jpg", title: "Rallye Col de L'EST - Photo 14"},
-            { id: 11, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/25_aaqx7m.jpg", title: "Rallye Col de L'EST - Photo 15"},
-            { id: 11, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/26_juulhu.jpg", title: "Rallye Col de L'EST - Photo 16"},
-            { id: 11, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/24_b0n8ql.jpg", title: "Rallye Col de L'EST - Photo 17"}
+            { id: 12, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/21_lyu1gv.jpg", title: "Rallye Col de L'EST - Photo 12"},
+            { id: 13, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/22_ylockz.jpg", title: "Rallye Col de L'EST - Photo 13"},
+            { id: 14, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/23_b0nmye.jpg", title: "Rallye Col de L'EST - Photo 14"},
+            { id: 15, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/25_aaqx7m.jpg", title: "Rallye Col de L'EST - Photo 15"},
+            { id: 16, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/26_juulhu.jpg", title: "Rallye Col de L'EST - Photo 16"},
+            { id: 17, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/24_b0n8ql.jpg", title: "Rallye Col de L'EST - Photo 17"}
         ];
 
         let currentPhotoId = null;
+        let currentModalPhotoSrc = null;
 
         // Initialise la galerie
         function initGallery() {
@@ -483,6 +682,22 @@
                     closeEmailModal();
                 }
             });
+
+            // Boutons suivant / précédent dans le modal
+            const prevBtn = document.getElementById('modalPrev');
+            const nextBtn = document.getElementById('modalNext');
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Pour éviter la fermeture du modal
+                    showPrevPhoto();
+                });
+                nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showNextPhoto();
+                });
+            }
+
         }
 
         // Affiche les photos dans la grille
@@ -508,7 +723,7 @@
 
                 // Clic sur la photo ouvre le modal
                 photoElement.addEventListener('click', () => {
-                    openModal(photo.src);
+                    openModal(photo.src, photo.id);
                 });
 
                 grid.appendChild(photoElement);
@@ -516,12 +731,19 @@
         }
 
         // Ouvre le modal de la photo en grand
-        function openModal(src) {
+        function openModal(src, photoId) {
             const modal = document.getElementById('photoModal');
             const modalImage = document.getElementById('modalImage');
             modalImage.src = src;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // Stocker l'ID de la photo actuelle pour le bouton de téléchargement
+            currentModalPhotoSrc = src;
+            const photo = photos.find(p => p.src === src);
+            if (photo) {
+                currentPhotoId = photo.id;
+            }
         }
 
         // Ferme le modal de la photo
@@ -530,6 +752,16 @@
             modal.classList.remove('active');
             document.getElementById('modalImage').src = '';
             document.body.style.overflow = 'auto';
+            currentModalPhotoSrc = null;
+            currentPhotoId = null;
+        }
+
+        // Nouvelle fonction pour demander la photo depuis le modal
+        function requestPhotoFromModal() {
+            if (currentPhotoId) {
+                closeModal(); // Fermer le modal photo
+                openEmailModal(currentPhotoId); // Ouvrir le modal email
+            }
         }
 
         // Ouvre le modal de demande email
@@ -691,6 +923,32 @@
 
         // Vérification initiale au chargement de la page
         toggleScrollButton();
+
+
+        // bouton gauche droite 
+
+        function showNextPhoto() {
+            if (currentPhotoId === null) return;
+
+            const currentIndex = photos.findIndex(p => p.id === currentPhotoId);
+            const nextIndex = (currentIndex + 1) % photos.length;
+            const nextPhoto = photos[nextIndex];
+
+            openModal(nextPhoto.src, nextPhoto.id);
+        }
+
+        function showPrevPhoto() {
+            if (currentPhotoId === null) return;
+
+            const currentIndex = photos.findIndex(p => p.id === currentPhotoId);
+            const prevIndex = (currentIndex - 1 + photos.length) % photos.length;
+            const prevPhoto = photos[prevIndex];
+
+            openModal(prevPhoto.src, prevPhoto.id);
+        }
+
+
+
     </script>
 
     <!-- Footer -->
