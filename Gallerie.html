@@ -642,244 +642,248 @@
 
     <script>
         // Photos stockées localement
-        const photos = [
-            { id: 1, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901373/17_fqepip.jpg", title: "Rallye Col de L'EST - Photo 1" },
-            { id: 2, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901374/18_ghwlcw.jpg", title: "Rallye Col de L'EST - Photo 2" },
-            { id: 3, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901373/16_podvbf.jpg", title: "Rallye Col de L'EST - Photo 3" },
-            { id: 4, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901373/19_fltdg4.jpg", title: "Rallye Col de L'EST - Photo 4" },
-            { id: 5, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901372/14_f8psoy.jpg", title: "Rallye Col de L'EST - Photo 5" },
-            { id: 6, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/15_q3pkoj.jpg", title: "Rallye Col de L'EST - Photo 6" },
-            { id: 7, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/12_gwncy1.jpg", title: "Rallye Col de L'EST - Photo 7" },
-            { id: 8, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/10_ojio7j.jpg", title: "Rallye Col de L'EST - Photo 8" },
-            { id: 9, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/13_uajstj.jpg", title: "Rallye Col de L'EST - Photo 9" },
-            { id: 10, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/11_o8u86t.jpg", title: "Rallye Col de L'EST - Photo 10"},
-            { id: 11, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/20_xt2dkm.jpg", title: "Rallye Col de L'EST - Photo 11"},
-            { id: 12, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/21_lyu1gv.jpg", title: "Rallye Col de L'EST - Photo 12"},
-            { id: 13, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/22_ylockz.jpg", title: "Rallye Col de L'EST - Photo 13"},
-            { id: 14, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/23_b0nmye.jpg", title: "Rallye Col de L'EST - Photo 14"},
-            { id: 15, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/25_aaqx7m.jpg", title: "Rallye Col de L'EST - Photo 15"},
-            { id: 16, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/26_juulhu.jpg", title: "Rallye Col de L'EST - Photo 16"},
-            { id: 17, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/24_b0n8ql.jpg", title: "Rallye Col de L'EST - Photo 17"}
-        ];
+const photos = [
+    { id: 1, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901373/17_fqepip.jpg", title: "Rallye Col de L'EST - Photo 1" },
+    { id: 2, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901374/18_ghwlcw.jpg", title: "Rallye Col de L'EST - Photo 2" },
+    { id: 3, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901373/16_podvbf.jpg", title: "Rallye Col de L'EST - Photo 3" },
+    { id: 4, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901373/19_fltdg4.jpg", title: "Rallye Col de L'EST - Photo 4" },
+    { id: 5, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901372/14_f8psoy.jpg", title: "Rallye Col de L'EST - Photo 5" },
+    { id: 6, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/15_q3pkoj.jpg", title: "Rallye Col de L'EST - Photo 6" },
+    { id: 7, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/12_gwncy1.jpg", title: "Rallye Col de L'EST - Photo 7" },
+    { id: 8, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/10_ojio7j.jpg", title: "Rallye Col de L'EST - Photo 8" },
+    { id: 9, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/13_uajstj.jpg", title: "Rallye Col de L'EST - Photo 9" },
+    { id: 10, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748901371/11_o8u86t.jpg", title: "Rallye Col de L'EST - Photo 10"},
+    { id: 11, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/20_xt2dkm.jpg", title: "Rallye Col de L'EST - Photo 11"},
+    { id: 12, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/21_lyu1gv.jpg", title: "Rallye Col de L'EST - Photo 12"},
+    { id: 13, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/22_ylockz.jpg", title: "Rallye Col de L'EST - Photo 13"},
+    { id: 14, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930380/23_b0nmye.jpg", title: "Rallye Col de L'EST - Photo 14"},
+    { id: 15, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/25_aaqx7m.jpg", title: "Rallye Col de L'EST - Photo 15"},
+    { id: 16, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/26_juulhu.jpg", title: "Rallye Col de L'EST - Photo 16"},
+    { id: 17, src: "https://res.cloudinary.com/du6pui52u/image/upload/v1748930924/24_b0n8ql.jpg", title: "Rallye Col de L'EST - Photo 17"}
+];
 
-        let currentPhotoId = null;
-        let currentModalPhotoSrc = null;
+let currentPhotoId = null;
+let currentModalPhotoSrc = null;
 
-        // Initialise la galerie
-        function initGallery() {
-            renderPhotos(photos);
-            setupEventListeners();
+// Initialise la galerie
+function initGallery() {
+    renderPhotos(photos);
+    setupEventListeners();
+}
+
+// Configuration des event listeners
+function setupEventListeners() {
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+
+    // Fermer les modals en cliquant à l'extérieur
+    document.getElementById('photoModal').addEventListener('click', (e) => {
+        if (e.target.id === 'photoModal') {
+            closeModal();
         }
+    });
 
-        // Configuration des event listeners
-        function setupEventListeners() {
-            // Mobile menu toggle
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('active');
-                });
-            }
-
-            // Fermer les modals en cliquant à l'extérieur
-            document.getElementById('photoModal').addEventListener('click', (e) => {
-                if (e.target.id === 'photoModal') {
-                    closeModal();
-                }
-            });
-
-            document.getElementById('emailModal').addEventListener('click', (e) => {
-                if (e.target.id === 'emailModal') {
-                    closeEmailModal();
-                }
-            });
-
-            // Échapper pour fermer les modals
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    closeModal();
-                    closeEmailModal();
-                }
-            });
-
-            // Boutons suivant / précédent dans le modal
-            const prevBtn = document.getElementById('modalPrev');
-            const nextBtn = document.getElementById('modalNext');
-
-            if (prevBtn && nextBtn) {
-                prevBtn.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Pour éviter la fermeture du modal
-                    showPrevPhoto();
-                });
-                nextBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    showNextPhoto();
-                });
-            }
-
-        }
-
-        // Affiche les photos dans la grille
-        function renderPhotos(photosToShow) {
-            const grid = document.getElementById('photoGrid');
-            grid.innerHTML = '';
-
-            photosToShow.forEach(photo => {
-                const photoElement = document.createElement('div');
-                photoElement.className = 'photo-item card';
-                photoElement.innerHTML = `
-                    <img src="${photo.src}" alt="${photo.title}" loading="lazy">
-                    <div class="photo-overlay">
-                        <div class="photo-info">
-                            <h3 class="text-lg font-bold">Col de L'EST</h3>
-                            <p class="text-sm text-gray-300">Première édition</p>
-                            <button class="download-btn" onclick="event.stopPropagation(); openEmailModal(${photo.id})">
-                                📧 Recevoir par email
-                            </button>
-                        </div>
-                    </div>
-                `;
-
-                // Clic sur la photo ouvre le modal
-                photoElement.addEventListener('click', () => {
-                    openModal(photo.src, photo.id);
-                });
-
-                grid.appendChild(photoElement);
-            });
-        }
-
-        // Ouvre le modal de la photo en grand
-        function openModal(src, photoId) {
-            const modal = document.getElementById('photoModal');
-            const modalImage = document.getElementById('modalImage');
-            modalImage.src = src;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            
-            // Stocker l'ID de la photo actuelle pour le bouton de téléchargement
-            currentModalPhotoSrc = src;
-            const photo = photos.find(p => p.src === src);
-            if (photo) {
-                currentPhotoId = photo.id;
-            }
-        }
-
-        // Ferme le modal de la photo
-        function closeModal() {
-            const modal = document.getElementById('photoModal');
-            modal.classList.remove('active');
-            document.getElementById('modalImage').src = '';
-            document.body.style.overflow = 'auto';
-            currentModalPhotoSrc = null;
-            currentPhotoId = null;
-        }
-
-        // Nouvelle fonction pour demander la photo depuis le modal
-        function requestPhotoFromModal() {
-            if (currentPhotoId) {
-                closeModal(); // Fermer le modal photo
-                openEmailModal(currentPhotoId); // Ouvrir le modal email
-            }
-        }
-
-        // Ouvre le modal de demande email
-        function openEmailModal(photoId) {
-            currentPhotoId = photoId;
+    
+    // Échapper pour fermer les modals
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            // Si le modal email est ouvert, fermer seulement le modal email
             const emailModal = document.getElementById('emailModal');
-            emailModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            
-            // Focus sur le champ email
-            setTimeout(() => {
-                document.getElementById('userEmail').focus();
-            }, 100);
-        }
-
-        // Ferme le modal de demande email
-        function closeEmailModal() {
-            const emailModal = document.getElementById('emailModal');
-            emailModal.classList.remove('active');
-            document.getElementById('emailForm').reset();
-            document.body.style.overflow = 'auto';
-            currentPhotoId = null;
-            
-            // Reset du bouton
-            const submitBtn = document.getElementById('submitBtn');
-            const submitText = document.getElementById('submitText');
-            const submitSpinner = document.getElementById('submitSpinner');
-            
-            submitBtn.classList.remove('loading');
-            submitText.classList.remove('hidden');
-            submitSpinner.classList.add('hidden');
-        }
-
-        // Gère la soumission du formulaire d'envoi par email
-        function requestPhoto(event) {
-            event.preventDefault();
-
-            // Vérification qu'EmailJS est chargé
-            if (typeof emailjs === 'undefined') {
-                showToast("Erreur : EmailJS non chargé. Rechargez la page.", "error");
-                return;
-            }
-
-            const email = document.getElementById('userEmail').value.trim();
-            const message = document.getElementById('userMessage').value.trim();
-            const photo = photos.find(p => p.id === currentPhotoId);
-
-            if (!photo) {
-                showToast("Erreur : photo introuvable.", "error");
-                return;
-            }
-
-            // Validation email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showToast("Veuillez entrer un email valide.", "error");
-                return;
-            }
-
-            // Loading state
-            const submitBtn = document.getElementById('submitBtn');
-            const submitText = document.getElementById('submitText');
-            const submitSpinner = document.getElementById('submitSpinner');
-            
-            submitBtn.classList.add('loading');
-            submitText.classList.add('hidden');
-            submitSpinner.classList.remove('hidden');
-
-            // Envoi avec EmailJS
-            emailjs.send(
-                "service_1s5r4by",
-                "template_5p3alt9",
-                {
-                    user_email: email,
-                    user_message: message || "Aucun message spécifique",
-                    photo_url: photo.src,
-                    photo_title: photo.title,
-                    from_name: email,
-                    to_name: "Équipe Col de L'EST"
-                }
-            )
-            .then((response) => {
-                console.log('EmailJS Success:', response);
-                showToast("Photo envoyée par email avec succès ! ✅", "success");
+            if (emailModal.classList.contains('active')) {
                 closeEmailModal();
-            })
-            .catch((error) => {
-                console.error("Erreur EmailJS :", error);
-                showToast("Erreur lors de l'envoi. Veuillez réessayer.", "error");
-                
-                // Reset loading state
-                submitBtn.classList.remove('loading');
-                submitText.classList.remove('hidden');
-                submitSpinner.classList.add('hidden');
-            });
+            } else {
+                // Sinon fermer le modal photo
+                closeModal();
+            }
         }
+    });
 
+    // Boutons suivant / précédent dans le modal
+    const prevBtn = document.getElementById('modalPrev');
+    const nextBtn = document.getElementById('modalNext');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Pour éviter la fermeture du modal
+            showPrevPhoto();
+        });
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showNextPhoto();
+        });
+    }
+
+}
+
+// Affiche les photos dans la grille
+function renderPhotos(photosToShow) {
+    const grid = document.getElementById('photoGrid');
+    grid.innerHTML = '';
+
+    photosToShow.forEach(photo => {
+        const photoElement = document.createElement('div');
+        photoElement.className = 'photo-item card';
+        photoElement.innerHTML = `
+            <img src="${photo.src}" alt="${photo.title}" loading="lazy">
+            <div class="photo-overlay">
+                <div class="photo-info">
+                    <h3 class="text-lg font-bold">Col de L'EST</h3>
+                    <p class="text-sm text-gray-300">Première édition</p>
+                    <button class="download-btn" onclick="event.stopPropagation(); openEmailModal(${photo.id})">
+                        📧 Recevoir par email
+                    </button>
+                </div>
+            </div>
+        `;
+
+        // Clic sur la photo ouvre le modal
+        photoElement.addEventListener('click', () => {
+            openModal(photo.src, photo.id);
+        });
+
+        grid.appendChild(photoElement);
+    });
+}
+
+// Ouvre le modal de la photo en grand
+function openModal(src, photoId) {
+    const modal = document.getElementById('photoModal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = src;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Stocker l'ID de la photo actuelle pour le bouton de téléchargement
+    currentModalPhotoSrc = src;
+    const photo = photos.find(p => p.src === src);
+    if (photo) {
+        currentPhotoId = photo.id;
+    }
+}
+
+// Ferme le modal de la photo
+function closeModal() {
+    const modal = document.getElementById('photoModal');
+    modal.classList.remove('active');
+    document.getElementById('modalImage').src = '';
+    document.body.style.overflow = 'auto';
+    currentModalPhotoSrc = null;
+    currentPhotoId = null;
+}
+
+// Fonction modifiée pour demander la photo depuis le modal (garde le modal image ouvert)
+function requestPhotoFromModal() {
+    if (currentPhotoId) {
+        // NE PAS fermer le modal photo, juste ouvrir le modal email par-dessus
+        openEmailModal(currentPhotoId);
+    }
+}
+
+// Ouvre le modal de demande email
+function openEmailModal(photoId) {
+    currentPhotoId = photoId;
+    const emailModal = document.getElementById('emailModal');
+    emailModal.classList.add('active');
+    // Ne pas modifier document.body.style.overflow car le modal photo est déjà ouvert
+    
+    // Focus sur le champ email
+    setTimeout(() => {
+        document.getElementById('userEmail').focus();
+    }, 100);
+}
+
+// Ferme le modal de demande email
+function closeEmailModal() {
+    const emailModal = document.getElementById('emailModal');
+    emailModal.classList.remove('active');
+    document.getElementById('emailForm').reset();
+    // Ne pas remettre overflow à 'auto' si le modal photo est encore ouvert
+    const photoModal = document.getElementById('photoModal');
+    if (!photoModal.classList.contains('active')) {
+        document.body.style.overflow = 'auto';
+    }
+    // Ne pas remettre currentPhotoId à null car le modal photo est encore ouvert
+    
+    // Reset du bouton
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const submitSpinner = document.getElementById('submitSpinner');
+    
+    submitBtn.classList.remove('loading');
+    submitText.classList.remove('hidden');
+    submitSpinner.classList.add('hidden');
+}
+
+// Gère la soumission du formulaire d'envoi par email
+function requestPhoto(event) {
+    event.preventDefault();
+
+    // Vérification qu'EmailJS est chargé
+    if (typeof emailjs === 'undefined') {
+        showToast("Erreur : EmailJS non chargé. Rechargez la page.", "error");
+        return;
+    }
+
+    const email = document.getElementById('userEmail').value.trim();
+    const message = document.getElementById('userMessage').value.trim();
+    const photo = photos.find(p => p.id === currentPhotoId);
+
+    if (!photo) {
+        showToast("Erreur : photo introuvable.", "error");
+        return;
+    }
+
+    // Validation email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showToast("Veuillez entrer un email valide.", "error");
+        return;
+    }
+
+    // Loading state
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const submitSpinner = document.getElementById('submitSpinner');
+    
+    submitBtn.classList.add('loading');
+    submitText.classList.add('hidden');
+    submitSpinner.classList.remove('hidden');
+
+    // Envoi avec EmailJS
+    emailjs.send(
+        "service_1s5r4by",
+        "template_5p3alt9",
+        {
+            user_email: email,
+            user_message: message || "Aucun message spécifique",
+            photo_url: photo.src,
+            photo_title: photo.title,
+            from_name: email,
+            to_name: "Équipe Col de L'EST"
+        }
+    )
+    .then((response) => {
+        console.log('EmailJS Success:', response);
+        showToast("Photo envoyée par email avec succès ! ✅", "success");
+        closeEmailModal();
+    })
+    .catch((error) => {
+        console.error("Erreur EmailJS :", error);
+        showToast("Erreur lors de l'envoi. Veuillez réessayer.", "error");
+        
+        // Reset loading state
+        submitBtn.classList.remove('loading');
+        submitText.classList.remove('hidden');
+        submitSpinner.classList.add('hidden');
+    });
+}
         // Affiche un toast avec un message
         function showToast(message, type = "info") {
             const toast = document.getElementById('toast');
