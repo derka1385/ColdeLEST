@@ -21,6 +21,8 @@
             align-items: center;
         }
 
+        
+
         .glass-morphism {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -244,6 +246,60 @@
 
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        /* Styles du bouton retour en haut */
+        #scrollToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #10b981, #34d399);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            z-index: 1000;
+        }
+
+        #scrollToTop.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #scrollToTop:hover {
+            background: linear-gradient(135deg, #059669, #10b981);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        #scrollToTop:active {
+            transform: translateY(0);
+        }
+
+        /* Animation de la flèche */
+        #scrollToTop::before {
+            content: '↑';
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Version alternative avec SVG */
+        .arrow-svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
         }
     </style>
 
@@ -592,10 +648,11 @@
             }, 4000);
         }
 
-        // Fonction pour scroll vers registration (à implémenter selon tes besoins)
+        // Fonction pour rediriger vers une section d'une autre page
         function scrollToRegistration() {
-            // Remplace par la logique de scroll vers ton formulaire d'inscription
-            console.log('Scroll vers inscription');
+            // Remplacez 'index.html' par le nom de votre page de destination
+            // Remplacez 'inscription' par l'ID de votre section cible
+            window.location.href = 'index.html#registration';
         }
 
         // Initialisation au chargement de la page
@@ -604,8 +661,40 @@
         });
     </script>
 
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" title="Retour en haut"></button>
+
+    <script>
+        // Récupération du bouton
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Fonction pour afficher/masquer le bouton
+        function toggleScrollButton() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        }
+
+        // Fonction pour remonter en haut
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Écouteurs d'événements
+        window.addEventListener('scroll', toggleScrollButton);
+        scrollToTopBtn.addEventListener('click', scrollToTop);
+
+        // Vérification initiale au chargement de la page
+        toggleScrollButton();
+    </script>
+
     <!-- Footer -->
-        <footer class="bg-black text-gray-400 py-16 px-6">
+    <footer class="bg-black text-gray-400 py-16 px-6">
         <div class="max-w-7xl mx-auto space-y-12">
             
             <!-- Logo & Description -->
@@ -674,7 +763,7 @@
             &copy; <span id="year"></span> Col de L'EST. Tous droits réservés.
             </div>
         </div>
-        </footer>
+    </footer>
 
 </body>
 </html>

@@ -20,6 +20,9 @@
             flex-direction: column;
             align-items: center;
         }
+        
+        
+
 
         .glass-morphism {
             background: rgba(255, 255, 255, 0.1);
@@ -53,6 +56,60 @@
            
         header a {
             font-size: 21px;
+        }
+
+        /* Styles du bouton retour en haut */
+        #scrollToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #10b981, #34d399);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            z-index: 1000;
+        }
+
+        #scrollToTop.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #scrollToTop:hover {
+            background: linear-gradient(135deg, #059669, #10b981);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        #scrollToTop:active {
+            transform: translateY(0);
+        }
+
+        /* Animation de la flèche */
+        #scrollToTop::before {
+            content: '↑';
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Version alternative avec SVG */
+        .arrow-svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
         }
 
     </style>
@@ -106,5 +163,164 @@
             </div>
         </div>
     </header>
+
+    <script>
+        // Fonction pour gérer le menu mobile
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            
+            // Toggle de la classe active
+            mobileMenu.classList.toggle('active');
+            hamburgerIcon.classList.toggle('active');
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            
+            // Clic sur le bouton hamburger
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+
+            // Fermer le menu quand on clique sur un lien
+            const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const hamburgerIcon = document.getElementById('hamburger-icon');
+                    mobileMenu.classList.remove('active');
+                    hamburgerIcon.classList.remove('active');
+                });
+            });
+
+            // Fermer le menu quand on clique ailleurs
+            document.addEventListener('click', function(e) {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    const hamburgerIcon = document.getElementById('hamburger-icon');
+                    mobileMenu.classList.remove('active');
+                    hamburgerIcon.classList.remove('active');
+                }
+            });
+        });
+
+        // Fonction pour rediriger vers une section d'une autre page
+        function scrollToRegistration() {
+            // Remplacez 'index.html' par le nom de votre page de destination
+            // Remplacez 'inscription' par l'ID de votre section cible
+            window.location.href = 'index.html#registration';
+        }
+    </script>
+
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" title="Retour en haut"></button>
+
+    <script>
+        // Récupération du bouton
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Fonction pour afficher/masquer le bouton
+        function toggleScrollButton() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        }
+
+        // Fonction pour remonter en haut
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Écouteurs d'événements
+        window.addEventListener('scroll', toggleScrollButton);
+        scrollToTopBtn.addEventListener('click', scrollToTop);
+
+        // Vérification initiale au chargement de la page
+        toggleScrollButton();
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-16 px-6">
+    <div class="max-w-7xl mx-auto space-y-12">
+        
+        <!-- Logo & Description -->
+        <div class="flex flex-col md:flex-row md:justify-between items-center gap-6 text-center md:text-left">
+        <div>
+            <h2 class="text-2xl font-bold text-white tracking-wide">Col de L'EST</h2>
+            <p class="mt-2 text-sm max-w-md">
+            L'expérience automobile moderne sur les plus belles routes d’Alsace et des Vosges.
+            </p>
+        </div>
+
+        <!-- Socials -->
+        <div class="flex items-center gap-4">
+            <a href="#" aria-label="Facebook" class="hover:text-white transition">
+            <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+            <a href="#" aria-label="Instagram" class="hover:text-white transition">
+            <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="hover:text-white transition">
+            <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+            <a href="#" aria-label="TikTok" class="hover:text-white transition">
+            <i class="fab fa-tiktok text-xl"></i>
+            </a>
+        </div>
+        </div>
+
+        <!-- Links -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+        <div>
+            <h3 class="text-white font-semibold mb-4">Nos Balades</h3>
+            <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">Cols des Vosges</a></li>
+            <li><a href="#" class="hover:text-white transition"> ************** </a></li>
+            <li><a href="#" class="hover:text-white transition"> ************** </a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white font-semibold mb-4">La Communauté</h3>
+            <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">Événements</a></li>
+            <li><a href="Gallerie.html" class="hover:text-white transition">Photos des éditions</a></li>
+            <li><a href="#" class="hover:text-white transition">Partenaires</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white font-semibold mb-4">À propos</h3>
+            <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">Notre vision</a></li>
+            <li><a href="#" class="hover:text-white transition">Contact</a></li>
+            <li><a href="#" class="hover:text-white transition">Mentions légales</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white font-semibold mb-4">Newsletter</h3>
+            <form class="flex flex-col space-y-2">
+            <input type="email" placeholder="Votre email" class="px-3 py-2 bg-gray-800 text-white placeholder-gray-500 rounded">
+            <button class="bg-emerald-700 hover:bg-emerald-800 text-white py-2 rounded transition">S’inscrire</button>
+            </form>
+        </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-sm pt-6 border-t border-gray-700">
+        &copy; <span id="year"></span> Col de L'EST. Tous droits réservés.
+        </div>
+    </div>
+    </footer>
+
 </body>
 </html>
