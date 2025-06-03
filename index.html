@@ -31,17 +31,38 @@
             }
 
             .gradient-text {
+                position: relative;
                 background: linear-gradient(135deg, #14a338, #344139);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
             }
 
+            .gradient-text::before {
+                content: attr(data-text);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                color: transparent;
+                text-shadow: 
+                    0 0 20px #14a338,
+                    0 0 15px #14a338,
+                    0 0 10px #14a338,
+                    0 0 5px #14a338;
+                background: none;
+                
+                -webkit-text-fill-color: initial;
+            }
+
             .gradient-text2 {
+                position: relative;
                 background: linear-gradient(135deg, #14a338, #344139);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
+                filter: drop-shadow(0 0 30px #9ac5a430) 
+                        drop-shadow(0 0 25px #9ac5a430) ;
             }
 
             .hero-bg {
@@ -185,6 +206,7 @@
 
             /* Styles généraux pour la section stats */
             .stats-section {
+                min-height: 120vh;
                 padding: 2rem 0;
                     background-color: #000000; /* Fond noir comme l'original */
                 /* Ou utilisez votre couleur de fond habituelle */
@@ -211,7 +233,7 @@
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-white/90 hover:text-white transition-colors">Evènements</a>
                     <a href="Gallerie.html" class="text-white/90 hover:text-white transition-colors">Gallerie</a>
-                    <a href="#contact" class="text-white/90 hover:text-white transition-colors">Contact</a>
+                    <a href="Contact.html" class="text-white/90 hover:text-white transition-colors">Contact</a>
                 </nav>
                 
                 <div class="hidden md:flex items-center space-x-4">
@@ -231,7 +253,7 @@
                 <nav class="flex flex-col space-y-4">
                     <a href="index.html" class="text-white/90 hover:text-white transition-colors">Evènements</a>
                     <a href="Gallerie.html" class="text-white/90 hover:text-white transition-colors">Gallerie</a>
-                    <a href="#contact" class="text-white/90 hover:text-white transition-colors">Contact</a>
+                    <a href="Contact.html" class="text-white/90 hover:text-white transition-colors">Contact</a>
                     <div class="pt-4">
                         <button onclick="scrollToRegistration()" class="bg-emerald-700 hover:bg-red-700 text-white w-full py-2 rounded-md transition-colors">
                             S'inscrire pour notre prochain Rallye
@@ -247,7 +269,7 @@
    
     <div class="relative z-10 text-center max-w-6xl mx-auto px-4">
         <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            <span class="gradient-text2 block mt-2 text-7xl md:text-8xl">Roulez, admirez, vibrez,</span>
+            <span class="gradient-text2 block mt-8 text-7xl md:text-8xl" data-text="Roulez, admirez, vibrez,">Roulez, admirez, vibrez,</span>
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-20 leading-tight">L'Est comme vous ne l'avez jamais conduit !</h2>
         </h1>
        
@@ -296,9 +318,9 @@
     
     <!-- Stats Section -->
 <section class="stats-section h-screen md text-white flex items-center mb-8 ">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 mb-12">
         <div class="text-center mb-12">
-            <h2 class="stats-title text-6xl md:text-7xl font-bold mb-6">
+            <h2 class="stats-title text-6xl md:text-7xl font-bold mb-6 mt-12">
                 C'est que <span class="gradient-text">le début de l'AVENTURE</span>
             </h2>
             <p class="stats-description text-xl text-white/80 max-w-2xl mx-auto">
@@ -306,7 +328,7 @@
                 Rejoignez-nous pour créer ensemble quelque chose d'<strong>EXCEPTIONNEL</strong>.
             </p>
         </div>
-        <div class="stats-grid grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="stats-grid grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div class="stat-card text-center group">
                 <div class="stat-icon inline-flex items-center justify-center w-16 h-16 mb-4 bg-emerald-700 rounded-full group-hover:scale-110 transition-transform duration-300">
                     <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
