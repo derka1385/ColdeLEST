@@ -223,7 +223,7 @@
 
         /* Bouton de téléchargement modal - Position responsive */
         .modal-download-btn {
-            position: fixed;
+            position: absolute;
             background: #10b981;
             color: white;
             border: none;
@@ -233,6 +233,8 @@
             font-size: 16px;
             z-index: 1001;
             transition: background 0.3s ease;
+            width: 8vh;
+            height: 8vh;
         }
 
         .modal-download-btn:hover {
@@ -261,8 +263,9 @@
             }
             
             .modal-download-btn {
-                top: 20px;
-                right: 20px; /* Décalé vers la gauche du bouton fermer */
+                top: 10px;
+                left: 10px; /* Décalé vers la gauche du bouton fermer */
+                
             }
         }
 
@@ -274,9 +277,9 @@
             }
             
             .modal-download-btn {
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
+                top: 10px;
+                left: 10px;
+                position: absolute;
             }
         }
 
@@ -310,7 +313,7 @@
 
         /* Styles pour les boutons de navigation (flèches) */
         .modal-nav {
-            position: absolute;
+            position: fixed;
             width: 8vh;
             height: 8vh;
             top: 50%;
@@ -587,9 +590,13 @@
                 </svg>
             </button>
 
-            <button class="modal-download-btn" onclick="requestPhotoFromModal()" id="modalDownloadBtn">
-                📧 Recevoir par email
+            <button class="modal-download-btn w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full flex items-center justify-center" onclick="requestPhotoFromModal()" id="modalDownloadBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-6-6m6 6l6-6" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 21h16" />
+                </svg>
             </button>
+            
             <button id="modalPrev" class="modal-nav prev flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path d="M16 4l-8 8 8 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
