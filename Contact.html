@@ -65,9 +65,7 @@
             .hero-section {
                 margin-top: 20vh;
             }
-    }
-
-
+        }
 
         .hero-container {
             display: flex;
@@ -79,36 +77,36 @@
         }
 
         .hero-container-stats-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
             margin-top: 2rem;
+            width: 100%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* En dessous de 768px : 2 colonnes */
+        @media (max-width: 768px) {
+            .hero-container-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        /* Sur iPhone (écrans très petits) : 1 colonne */
+        @media (max-width: 480px) {
+            .hero-container-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
 
         .stat-item {
-            flex: 1 1 22%; /* 4 colonnes en grand écran */
-            min-width: 250px;
-            max-width: 300px;
             padding: 1rem;
-            border-radius: 10px;
             text-align: center;
         }
-
-        /* → 2 colonnes dès que l'écran passe sous 1024px */
-        @media (max-width: 1024px) {
-            .stat-item {
-                flex: 1 1 45%;
-            }
-        }
-
-        /* → 1 colonne sous 728px */
-        @media (max-width: 728px) {
-            .stat-item {
-                flex: 1 1 100%;
-            }
-        }
-
 
         /* Section Notre Équipe avec fond démarqué */
         .team-section {
@@ -308,11 +306,6 @@
             margin: 60px 0;
         }
         
-        .stat-item {
-            text-align: center;
-            color: white;
-        }
-        
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
@@ -464,7 +457,7 @@
             </p>
             
             <!-- Stats rapides -->
-            <div class="hero-container-stats-grid max-w-4xl mx-auto">
+            <div class="hero-container-stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">3+</div>
                     <div class="text-lg">Années d'expérience <br> en photo</div>
